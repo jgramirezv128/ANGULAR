@@ -1,10 +1,10 @@
-import { ProyectoFinalAngularPage } from './app.po';
+import { ProyectoFinalPage } from './app.po';
 
-describe('proyecto-final-angular App', function() {
-  let page: ProyectoFinalAngularPage;
+describe('proyecto-final App', function() {
+  let page: ProyectoFinalPage;
 
   beforeEach(() => {
-    page = new ProyectoFinalAngularPage();
+    page = new ProyectoFinalPage();
   });
 
   it('should display message saying app works', () => {

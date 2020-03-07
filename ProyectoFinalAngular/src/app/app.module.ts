@@ -5,28 +5,17 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
-import { CatalogosComponent } from './catalogos/catalogos.component';
-import { CarritoComponent } from './carrito/carrito.component';
-import { BarraSuperiorComponent } from './barra-superior/barra-superior.component';
-import { CatalogosDetalleComponent } from './catalogos-detalle/catalogos-detalle.component';
-import { HttpService } from './http.service';
-
-import { L3RoutingModule } from './app-routing.module';
+import { HttpService } from "./http.service";
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent,
-    CatalogosComponent,
-    CarritoComponent,
-    BarraSuperiorComponent,
-    CatalogosDetalleComponent
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule,
-    L3RoutingModule
+    HttpModule
   ],
   providers: [HttpService],
   bootstrap: [AppComponent]

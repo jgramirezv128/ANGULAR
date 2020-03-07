@@ -1,15 +1,25 @@
-import { Component, OnInit } from '@angular/core';
+import { Component} from '@angular/core';
+import { DataService } from '../data.service';
 
 @Component({
-  selector: 'app-login',
+  selector: 'login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent {
 
-  constructor() { }
+    private MostrarError= false;
+    correo ="";
+    password="";
+    constructor(private dataService: DataService){}
 
-  ngOnInit() {
-  }
+    onSubmit()
+    {
+      this.MostrarError =false;
+      console.log("Antes: "+ this.MostrarError.toString());
+        this.MostrarError = !this.dataService.getUsuarioValido(this.correo,this.password);
+        console.log("Mostrar Error: "+ this.MostrarError.toString());
+        //this.MostrarError = !this.MostrarError;
+    }
 
 }
