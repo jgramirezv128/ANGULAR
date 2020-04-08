@@ -1,20 +1,135 @@
 html{
-  background-color: black;
   height: 100%;
 }
 body{
   height: 100%;
-  color: white;
-  top: 0;
-  left: 0;
+  background-image: url('./assets/imagenesBase/login-fondo.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center center;
+  margin:0px;
  }
 
 
-
-.bg {
+ .bg {
   height: 100%;
   background-image: url('./assets/imagenesBase/login-fondo.jpg');
   background-repeat: no-repeat;
   background-size: cover;
+  margin:0px;
 }
 
+.back-catalogo
+{
+  margin-top: 15px;
+  padding: 10px;
+  background-color: white;
+  color: black;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  border-radius: 5px;
+}
+
+.titulo
+{
+  font-size: xx-large;
+  text-align: left;
+}
+
+.subtitulo
+{
+  font-size: xx-large;
+  text-align: left;
+  margin-left: 10px;
+}
+
+.subtitulo2
+{
+  font-size: medium;
+  text-align: right;
+  margin-left: 10px;
+}
+
+body
+{
+  background-color: transparent;
+}
+
+@media (max-width:420px)
+{
+
+  /* estilos para los contenedores */
+.contenedorPantalla {
+  width: 80%;
+  margin-left: 10%;
+  margin-right: 10%;
+  font-family: 'Courier New', Courier, monospace;
+  color: white;
+}
+
+    .container 
+    {
+        display: flex; 
+        flex-direction:column !important; 
+    }
+
+    h1
+    {
+        font-size: medium;
+        font-weight: bold;
+    }
+
+    .titulo
+    {
+      font-size: medium;
+      font-weight: bold;
+      text-align: left;
+    }
+
+    .subtitulo
+    {
+      font-size: small;
+      text-align: left;
+      margin-left: 10px;
+      color: gray;
+    }
+
+    .subtitulo2
+    {
+      font-size: small;
+      text-align: left;
+      margin-left: 10px;
+      color: gray;
+    }
+} 
+
+@media (max-width:812px) 
+{
+  /* estilos para los contenedores */
+.contenedorPantalla {
+  width: 90%;
+  margin-left: 5%;
+  margin-right: 5%;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+}
+
+
+@media (min-width:813px) 
+{
+
+    /* estilos para los contenedores */
+.contenedorPantalla {
+  width: 90%;
+  margin-left: 5%;
+  margin-right: 5%;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+    .container 
+    {
+        display: flex; 
+        flex-direction:row !important;
+    }
+} 

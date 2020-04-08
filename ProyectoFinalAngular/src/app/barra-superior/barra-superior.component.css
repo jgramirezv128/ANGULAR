@@ -1,0 +1,24 @@
+.barrasuperior
+{
+  height: 60px;
+  border: 5px;
+  border-radius: 5px;
+  border-color: black;
+  background-color: white;
+}
+
+.menuizquierda
+{
+  background-color: white;
+  height: 60px;
+  padding-left: 20%;
+  float: left;
+}
+
+.menuderecha
+{
+  background-color: white;
+  height: 60px;
+  float: right;
+  border-radius: 5px;
+}

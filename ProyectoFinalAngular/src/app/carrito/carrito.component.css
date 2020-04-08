@@ -1,0 +1,39 @@
+body
+{
+  background-color: transparent;
+}
+
+.tarjeta
+{
+    border: 2px;
+    border-color: blue;
+    border-radius: 5px;
+    margin: 5px;
+    width: 16rem;
+}
+
+@media (max-width:420px)
+{
+    .container 
+    {
+        display: flex; 
+        flex-direction:column !important; 
+    }
+
+    h1
+    {
+        font-size: medium;
+        font-weight: bold;
+    }
+} 
+
+
+@media (min-width:421px) 
+{
+    .container 
+    {
+        display: flex; 
+        flex-direction:row !important;
+    }
+} 
+

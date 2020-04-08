@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-barra-superior',
+  selector: 'barra-superior',
   templateUrl: './barra-superior.component.html',
   styleUrls: ['./barra-superior.component.css']
 })

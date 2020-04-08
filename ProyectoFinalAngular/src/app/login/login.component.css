@@ -1,14 +1,26 @@
-/* estilos para los contenedores */
-.container {
-  width: 40%;
-  margin: auto;
-  padding: 10%;
-  font-family: 'Courier New', Courier, monospace;
+body
+{
+  color: white;
+  background:  transparent;
 }
 
-form
+
+/* estilos para los contenedores */
+.contenedor {
+  width: 60%;
+  margin-left: 20%;
+  margin-right: 20%;
+  font-family: 'Courier New', Courier, monospace;
+  color: white;
+}
+
+h1
 {
-  width: 500px;
+  color: white;
+  font-size:x-large;
+  font-weight: bolder;
+  display: inherit;
+  text-align: center;
 }
 
 /* estilos para las cajas de texto */
@@ -44,11 +56,13 @@ input[type=submit]:hover {
 }
 
 /* estilos para los titulos */
-h2
+.contenedor h2
 {
   text-align: center;
   font-size: 30px;
   visibility: collapse;
+  color: white !important;
+  display: initial;
 }
 
 label
@@ -66,3 +80,84 @@ label
   font-weight: bold;
   font-size: 24px;
 }
+
+@media (max-width:420px)
+{
+  /* estilos para las cajas de texto */
+input[type=email],input[type=password] {
+  background-color: white;
+  color: blue;
+  cursor: pointer;
+  display: block;
+  border: none;
+  font-size: 12px;
+  width: 100%;
+}
+
+/* estilos para los botones */
+input[type=submit] {
+  background-color: #4CAF50;
+  color: white;
+  cursor: pointer;
+  display: block;
+  margin: 0 auto;
+  border-radius: 5px;
+  border: 5px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 12px;
+}
+
+/* estilos para los contenedores */
+.contenedor {
+  font-family: 'Courier New', Courier, monospace;
+  width: 90%;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.contenedor p
+{
+  margin: 10px 0px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+} 
+
+
+@media (max-width:812px) 
+{
+  /* estilos para los contenedores */
+.contenedor {
+  width: 80%;
+  margin-left: 10%;
+  margin-right: 10%;
+  font-family: 'Courier New', Courier, monospace;
+  color: white;
+ }
+
+  input[type=email],input[type=password] 
+  {
+    width: 100%;
+  }
+} 
+
+@media (min-width:813px) 
+{
+  /* estilos para los contenedores */
+.contenedor {
+  width: 60%;
+  margin-left: 20%;
+  margin-right: 20%;
+  font-family: 'Courier New', Courier, monospace;
+  color: white;
+}
+
+input[type=email],input[type=password] 
+{
+  width: 100%;
+}
+
+} 
+

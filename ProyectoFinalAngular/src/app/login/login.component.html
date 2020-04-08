@@ -1,18 +1,26 @@
-<div class="container">
-  <form (ngSubmit)="onSubmit(form)" #form="ngForm">
-      <h2>Inicia Sesión</h2>
-      <p>
-          Correo electrónico:
-      </p>
-      <input type="email" name="correo" placeholder="Digite el correo electrónico" required size="50" [(ngModel)]="correo">
-      <p>
-          Contraseña:
-      </p>
-      <input type="password" name="password" placeholder="Digite la contraseña" required size="50" [(ngModel)]="password">
-      <br>
-      <label id="error" *ngIf="MostrarError">*Error en el inicio de sesión</label>
-      <br>
-      <br>
-        <input type="submit" value="Ingresar">
-  </form>
-</div>
+<html>
+    <head>
+    </head>
+
+    <body style="background-color: transparent;">
+        <div class="contenedor" style="margin-top: 10%;">
+              <h1>Inicia Sesión</h1> 
+                <form (ngSubmit)="onSubmit(form)" #form="ngForm"> 
+                    <p>
+                        Correo electrónico:
+                    </p>
+                    <input type="email" name="correo" placeholder="Digite el correo electrónico" size="50%" required [(ngModel)]="correo">
+                    <p>
+                        Contraseña:
+                    </p>
+                    <input type="password" name="password" placeholder="Digite la contraseña" size="50%" required [(ngModel)]="password">
+                    <br>
+                    <label id="error" *ngIf="MostrarError">*Error en el inicio de sesión</label>
+                      <input type="submit" value="Ingresar" style="margin-top: 5%; margin-left: 45%;">
+                </form>     
+        </div>
+    </body>
+</html>
+
+
+
