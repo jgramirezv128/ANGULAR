@@ -3,11 +3,11 @@ html{
 }
 body{
   height: 100%;
-  background-image: url('./assets/imagenesBase/login-fondo.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
   background-position: center center;
+  background-image: url('./assets/imagenesBase/main-fondo.jpg');
   margin:0px;
  }
 

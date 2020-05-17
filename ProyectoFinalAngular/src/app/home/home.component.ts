@@ -3,8 +3,6 @@ import { BarraSuperiorComponent } from "../barra-superior/barra-superior.compone
 import { CarritoComponent } from "../carrito/carrito.component";
 import { CatalogoComponent } from "../catalogo/catalogo.component";
 import { DetalleProductoComponent } from '../detalle-producto/detalle-producto.component';
-
-
 @Component({
   selector: 'home',
   templateUrl: './home.component.html',

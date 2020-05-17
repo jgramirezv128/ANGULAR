@@ -7,17 +7,21 @@
     </head>
 
     <body style="background-color: transparent;">
-      <div class="barrasuperior">      
-        <p style="color: gray; padding: 10px 0px 0px 10px; float: inline-start;">La Bodega</p>
+      <div class="barrasuperior"> 
+        <div class="menuizquierda">
+          <p style="color: gray; margin-top: 7%;">La Bodega</p>
+        </div>     
+        
         <div class="menuderecha">
           <nav>
             <a class="navbar-brand" routerLink="/catalogo">
               <img src="../../assets/iconos/grid.svg" width="30" height="30" alt="">
             </a>
             <a class="navbar-brand" routerLink="/app-carrito">
-              <img src="../../assets/iconos/shopping-cart.svg" width="30" height="30" alt="">
+              <img src="../../assets/iconos/shopping-cart.svg" width="30" height="30" alt="">            
+                <span id="v_cont"  *ngIf="V_contadorBarraSuperior>0 | pipeContador" class='badge badge-warning' id='lblCartCount'> {{V_contadorBarraSuperior}} </span>
             </a>
-            <a class="navbar-brand" routerLink="/detalle-producto">
+            <a class="navbar-brand">
               <img src="../../assets/iconos/download.svg" width="30" height="30" alt="">
             </a>
             <a class="navbar-brand" routerLink="/">

@@ -11,8 +11,11 @@
 {
   background-color: white;
   height: 60px;
-  padding-left: 20%;
   float: left;
+  width: 15%;
+  padding: 0px 0px 0px 5%; 
+  float: inline-start;
+  border-radius: 5px;
 }
 
 .menuderecha
@@ -21,4 +24,26 @@
   height: 60px;
   float: right;
   border-radius: 5px;
+  width: auto;
+}
+
+.badge {
+  padding-left: 9px;
+  padding-right: 9px;
+  -webkit-border-radius: 9px;
+  -moz-border-radius: 9px;
+  border-radius: 9px;
+}
+
+.label-warning[href],
+.badge-warning[href] {
+  background-color: #ff0000;
+}
+#lblCartCount {
+    font-size: 12px;
+    background: #ff0000;
+    color: #fff;
+    padding: 0 5px;
+    vertical-align: top;
+    margin-left: -10px; 
 }

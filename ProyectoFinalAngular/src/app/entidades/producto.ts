@@ -6,5 +6,6 @@ export class producto
   Precio: number;
   Stock: number;
   imagen: string;
-
+  cantidad: number;
+  subtotal : number;
 }

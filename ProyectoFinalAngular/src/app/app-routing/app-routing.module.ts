@@ -9,14 +9,15 @@ import { DetalleProductoComponent } from 'app/detalle-producto/detalle-producto.
 
 const routes: Routes = [
   { path:'home', component: HomeComponent },
+  { path:'', redirectTo:'/login', pathMatch:'full' },
   { path:'app-carrito', component: CarritoComponent},
   { path:'catalogo', component: CatalogoComponent},
   { path:'login', component: LoginComponent},
-  { path:'detalle-producto', component: DetalleProductoComponent}
+  { path:'detalle-producto/:id', component: DetalleProductoComponent}
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes,{enableTracing:false})],
   exports: [RouterModule]
 })
 

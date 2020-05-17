@@ -4,21 +4,20 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">  
     </head>
     <body>
+      <barra-superior></barra-superior> 
         <div class="back-catalogo">
-          <h1 class="titulo">Aguacate</h1>
+          <h1 class="titulo"> {{V_producto_seleccionado.Nombre}}</h1>
             <div class="container" style="height: 500px; display:block; margin: 5%;">
 
                     <div class="row">
                        <div class="col-md-4">
-                          <img  src="../../assets/imagenesBase/aguacate.jpg" class="card-img" alt="...">
-                        </div>
-                    
-                      
+                          <img  src="../{{V_producto_seleccionado.imagen}}" class="card-img" alt="{{V_producto_seleccionado.imagen}}">
+                        </div>   
                       <div class="col-md-8">
                         <div class="card-body">
                           <p class="card-text">
-                            Precio:$5 <br>
-                            Unidades disponibles: $46 <br>
+                            Precio: ${{V_producto_seleccionado.Precio}} <br>
+                            Unidades disponibles: ${{V_producto_seleccionado.Stock}} <br>
                             </p>
                            </div>
                       </div>

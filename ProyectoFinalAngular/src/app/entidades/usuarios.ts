@@ -1,6 +1,6 @@
 //Entidad para los usuarios
 export class usuarios
 {
-  correo: string;
+  usuario: string;
   password: string;
 }

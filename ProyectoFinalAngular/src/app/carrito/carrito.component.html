@@ -4,111 +4,35 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">  
     </head>
     <body>
+      <barra-superior></barra-superior> 
         <div class="back-catalogo" >
           <h1 class="titulo">Carrito de compras</h1>
           <div class="container">
             <div style="background-color: white; overflow: auto; height: 460px; max-width: 400px;">              
                 <div class="card mb-3" style="max-width: 400px;">
-                    <div class="row no-gutters">
+                    <div class="row no-gutters" *ngFor="let item of carritoCompra.Productos">
                       <div class="col-md-4">
-                        <img  src="../../assets/imagenesBase/ajo.jpg" class="card-img" alt="...">
+                        <img  src="{{item.imagen}}" class="card-img" alt="{{item.Nombre}}">
                       </div>
                       <div class="col-md-8">
                         <div class="card-body">
                           <p class="card-text">
-                            Ajo<br>
+                            {{item.Nombre}}<br>
                             <strong>
-                              Unidades:5 <br>
-                              Subtotal: $46 <br>
+                              Unidades: {{item.cantidad}} <br>
+                              Subtotal: ${{item.subtotal}} <br>
                             </strong>
                             </p>
                            </div>
                       </div>
                     </div>
                   </div>
-                  <div class="card mb-3" style="max-width: 400px;">
-                    <div class="row no-gutters">
-                      <div class="col-md-4">
-                        <img  src="../../assets/imagenesBase/almendras.jpg" class="card-img" alt="...">
-                      </div>
-                      <div class="col-md-8">
-                        <div class="card-body">
-                          <p class="card-text">
-                            Precio:$5 <br>
-                            Unidades disponibles: $46 <br>
-                            </p>
-                           </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="card mb-3" style="max-width: 400px;">
-                    <div class="row no-gutters">
-                      <div class="col-md-4">
-                        <img  src="../../assets/imagenesBase/fresa.jpg" class="card-img" alt="...">
-                      </div>
-                      <div class="col-md-8">
-                        <div class="card-body">
-                          <p class="card-text">
-                            Precio:$5 <br>
-                            Unidades: $46 <br>
-                            </p>
-                           </div>
-                      </div>
-                    </div>
-                  </div>  
-                  <div class="card mb-3" style="max-width: 400px;">
-                    <div class="row no-gutters">
-                      <div class="col-md-4">
-                        <img  src="../../assets/imagenesBase/ajo.jpg" class="card-img" alt="...">
-                      </div>
-                      <div class="col-md-8">
-                        <div class="card-body">
-                          <p class="card-text">
-                            Ajo<br>
-                            <strong>
-                              Unidades:5 <br>
-                              Subtotal: $46 <br>
-                            </strong>
-                            </p>
-                           </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="card mb-3" style="max-width: 400px;">
-                    <div class="row no-gutters">
-                      <div class="col-md-4">
-                        <img  src="../../assets/imagenesBase/almendras.jpg" class="card-img" alt="...">
-                      </div>
-                      <div class="col-md-8">
-                        <div class="card-body">
-                          <p class="card-text">
-                            Precio:$5 <br>
-                            Unidades disponibles: $46 <br>
-                            </p>
-                           </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="card mb-3" style="max-width: 400px;">
-                    <div class="row no-gutters">
-                      <div class="col-md-4">
-                        <img  src="../../assets/imagenesBase/fresa.jpg" class="card-img" alt="...">
-                      </div>
-                      <div class="col-md-8">
-                        <div class="card-body">
-                          <p class="card-text">
-                            Precio:$5 <br>
-                            Unidades: $46 <br>
-                            </p>
-                           </div>
-                      </div>
-                    </div>
-                  </div>  
+                  
             </div>
             <div style="margin-top: 15%; margin-left: 5%;">
-              <h1>Total:$22</h1>
+              <h1>Total:$ {{carritoCompra.Total}}</h1>
               <a routerLink="/catalogo" class="btn btn-light">Cancelar...</a>
-              <a routerLink="/catalogo" class="btn btn-light">Pagar...</a>
+              <a routerLink="/catalogo" (click)="onPagar()" class="btn btn-light">Pagar...</a>
           </div>
         </div>
       </div>
