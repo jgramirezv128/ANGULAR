@@ -18,7 +18,6 @@ export class carrito
     this.Productos.forEach(x => {
         this.Total = this.Total + x.subtotal;
     });
-    console.log("Total:" + this.Total);
     return this.Total;
    
   }

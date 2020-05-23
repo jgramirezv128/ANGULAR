@@ -1,4 +1,4 @@
-import { Component, Injectable } from '@angular/core';
+import { Component, Injectable, Input, Output,EventEmitter } from '@angular/core';
 import { DataService } from '../data.service';
 
 @Component({
@@ -8,14 +8,5 @@ import { DataService } from '../data.service';
 })
 
 export class BarraSuperiorComponent {
-
-  V_contadorBarraSuperior : number;
-
-  constructor(private dataService: DataService) 
-  { 
-    this.V_contadorBarraSuperior = this.dataService.ConsultarContador();
-    console.log("Nuevo contador: " + this.V_contadorBarraSuperior);
-  }
-
-
+  @Input() item: number;
 }

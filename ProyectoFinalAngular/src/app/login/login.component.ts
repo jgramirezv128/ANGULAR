@@ -7,6 +7,7 @@ import { DetalleProductoComponent } from '../detalle-producto/detalle-producto.c
 import { HomeComponent } from "../home/home.component";
 import { AppRoutingModule } from "../app-routing/app-routing.module";
 import { Router } from "@angular/router";
+import { usuarios } from '../entidades/usuarios';
 
 @Component({
   selector: 'login',
@@ -14,12 +15,17 @@ import { Router } from "@angular/router";
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-
+  //Declaración de variables
     private MostrarError= false;
     ResultadoLogin= false;
-    correo ="";
-    password="";
-    constructor(private dataService: DataService, private prouter: Router){}
+    correo : string;
+    password: string;
+
+    
+    constructor(private dataService: DataService, private prouter: Router)
+    {
+      this.dataService.V_Logueado = false;
+    }
 
     onSubmit()
     {
@@ -28,7 +34,6 @@ export class LoginComponent {
 
         if(this.ResultadoLogin)
         {  
-          this.dataService.getProductos();
           this.prouter.navigate(['/catalogo']);
         }
     }

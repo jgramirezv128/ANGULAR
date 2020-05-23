@@ -14,16 +14,9 @@ import { DataService } from './data.service';
 })
 export class AppComponent {
   
-  private CambiaFondo: boolean = true;
-  private NombreFondo: string ="../assets/imagenesBase/login-fondo.jpg";
-
-  constructor()
+  constructor(private dataService: DataService)
   {
-    if (this.CambiaFondo) 
-    {
-      console.log("Fondo:" + this.NombreFondo);
-      this.NombreFondo = "../assets/imagenesBase/main-fondo.jpg";
-    }
+    
   }
 
  }

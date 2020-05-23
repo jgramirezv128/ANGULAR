@@ -18,7 +18,7 @@ export class CarritoComponent{
 
   onPagar()
   {
-     this.servicio.Pagar();
+     this.servicio.Pagar(this.carritoCompra);
   }
 
 }

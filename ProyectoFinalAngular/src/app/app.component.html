@@ -1,12 +1,9 @@
 
-<html> 
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-  </head>
-  <body>
-    <div class="contenedorPantalla">
-      <router-outlet></router-outlet>
-    </div>     
-       
-  </body>
-</html>
+  <html [ngStyle]="{'background-image': 'url(' + dataService.CambiarFondo() + ')'}">
+    <body [ngStyle]="{'background-image': 'url(' + dataService.CambiarFondo() + ')'}">
+      <div class="contenedorPantalla">
+        <router-outlet></router-outlet>
+      </div>  
+    </body>
+         
+  </html>

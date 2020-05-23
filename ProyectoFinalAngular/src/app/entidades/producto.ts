@@ -1,7 +1,7 @@
 //Entidad para los productos
 export class producto
 {
-  IDProducto: number;
+  IDProducto: string;
   Nombre: string;
   Precio: number;
   Stock: number;

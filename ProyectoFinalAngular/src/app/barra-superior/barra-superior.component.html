@@ -1,12 +1,10 @@
 <!DOCTYPE html>
-<html>
     <head>
       <title>Barra superior</title>
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     </head>
-
-    <body style="background-color: transparent;">
+    
       <div class="barrasuperior"> 
         <div class="menuizquierda">
           <p style="color: gray; margin-top: 7%;">La Bodega</p>
@@ -19,7 +17,7 @@
             </a>
             <a class="navbar-brand" routerLink="/app-carrito">
               <img src="../../assets/iconos/shopping-cart.svg" width="30" height="30" alt="">            
-                <span id="v_cont"  *ngIf="V_contadorBarraSuperior>0 | pipeContador" class='badge badge-warning' id='lblCartCount'> {{V_contadorBarraSuperior}} </span>
+                <span id="v_cont" *ngIf="item>0" class='badge badge-warning' id='lblCartCount'> {{item}} </span>
             </a>
             <a class="navbar-brand">
               <img src="../../assets/iconos/download.svg" width="30" height="30" alt="">
@@ -30,6 +28,3 @@
           </nav>
         </div>
       </div>
-
-    </body>
-</html>

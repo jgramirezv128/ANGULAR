@@ -1,8 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input,Output, EventEmitter  } from '@angular/core';
 import { DataService } from '../data.service';
 import { producto } from '../entidades/producto';
-import { Console } from '@angular/core/src/console';
-import { iterableDiff } from '@angular/core/src/change_detection/change_detection';
 
 @Component({
   selector: 'catalogo',
@@ -10,17 +8,16 @@ import { iterableDiff } from '@angular/core/src/change_detection/change_detectio
   styleUrls: ['./catalogo.component.css']
 })
 export class CatalogoComponent{
-
   //Declaración de variables
   V_listaproductos: producto[];
   V_listaproductosFiltro: producto[];
   V_listaproductosCarrito: producto[] = [];
   V_filtro: string = "";
+  V_Contador:number;
 
   //Construcctor
   constructor(private dataService: DataService) 
   { 
-    console.log("Constructor GetProductos");
     this.V_listaproductos=  this.dataService.getProductos();
     this.V_listaproductosFiltro = this.V_listaproductos;
   }
@@ -46,7 +43,8 @@ export class CatalogoComponent{
 
 AgregarItemCarrito(Item:producto)
 {
-  this.dataService.Agregar(Item);
+  this.V_Contador = this.dataService.Agregar(Item);
+  console.log("Total agregar:" + this.V_Contador);
 }
 
 }

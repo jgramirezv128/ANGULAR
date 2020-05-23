@@ -21,4 +21,11 @@ export class HttpService {
     .map((response: Response)=> response.json())
   }
 
+  ActualizarProductos(p_producto: producto)
+  {
+    const datos = JSON.stringify(p_producto);
+    return this.http.put('https://productosnextu.firebaseio.com/'+p_producto.IDProducto +'/.json',datos)
+    .map((response: Response)=> response.json())
+  }
+
 }
