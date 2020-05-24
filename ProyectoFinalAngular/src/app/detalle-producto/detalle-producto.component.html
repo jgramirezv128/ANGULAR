@@ -5,19 +5,19 @@
     </head>
     <body>
       <barra-superior></barra-superior> 
-        <div class="back-catalogo">
+        <div class="fondo-catalogo">
           <h1 class="titulo"> {{V_producto_seleccionado.Nombre}}</h1>
             <div class="container" style="height: 500px; display:block; margin: 5%;">
 
                     <div class="row">
                        <div class="col-md-4">
-                          <img  src="../{{V_producto_seleccionado.imagen}}" class="card-img" alt="{{V_producto_seleccionado.imagen}}">
+                          <img  src="{{V_producto_seleccionado.imagen}}" class="card-img" alt="{{V_producto_seleccionado.imagen}}">
                         </div>   
                       <div class="col-md-8">
                         <div class="card-body">
                           <p class="card-text">
-                            Precio: ${{V_producto_seleccionado.Precio}} <br>
-                            Unidades disponibles: ${{V_producto_seleccionado.Stock}} <br>
+                            <b> Precio: </b> ${{V_producto_seleccionado.Precio}} <br>
+                            <b> Unidades disponibles: </b>{{V_producto_seleccionado.Stock}} <br>
                             </p>
                            </div>
                       </div>

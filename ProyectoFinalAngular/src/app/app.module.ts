@@ -12,7 +12,6 @@ import { CatalogoComponent } from './catalogo/catalogo.component';
 import { CarritoComponent } from './carrito/carrito.component';
 import { AppRoutingModule } from "./app-routing/app-routing.module";
 import { DetalleProductoComponent } from './detalle-producto/detalle-producto.component';
-import { PipeContadorPipe } from './pipe-contador.pipe';
 
 @NgModule({
   declarations: [
@@ -22,8 +21,7 @@ import { PipeContadorPipe } from './pipe-contador.pipe';
     BarraSuperiorComponent,
     CatalogoComponent,
     CarritoComponent,
-    DetalleProductoComponent,
-    PipeContadorPipe
+    DetalleProductoComponent
   ],
   imports: [
     BrowserModule,

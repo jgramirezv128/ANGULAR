@@ -3,7 +3,7 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">  
     </head>
       <barra-superior></barra-superior> 
-        <div class="back-catalogo" >
+        <div class="fondo-catalogo" >
           <h1 class="titulo">Carrito de compras</h1>
           <div class="container">
             <div style="background-color: white; overflow: auto; height: 460px; max-width: 400px;">              
@@ -17,8 +17,8 @@
                           <p class="card-text">
                             {{item.Nombre}}<br>
                             <strong>
-                              Unidades: {{item.cantidad}} <br>
-                              Subtotal: ${{item.subtotal}} <br>
+                              <B></B>Unidades: {{item.cantidad}} <br>
+                              <B>Subtotal:</B> ${{item.subtotal}} <br>
                             </strong>
                             </p>
                            </div>
@@ -30,7 +30,7 @@
             <div style="margin-top: 15%; margin-left: 5%;">
               <h1>Total:$ {{carritoCompra.Total}}</h1>
               <a routerLink="/catalogo" class="btn btn-light">Cancelar...</a>
-              <a routerLink="/catalogo" (click)="onPagar()" class="btn btn-light">Pagar...</a>
+              <a (click)="onPagar()" class="btn btn-light">Pagar...</a>
           </div>
         </div>
       </div>

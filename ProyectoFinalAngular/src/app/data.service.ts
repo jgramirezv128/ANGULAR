@@ -5,14 +5,15 @@ import { usuarios } from './entidades/usuarios';
 import { producto } from './entidades/producto';
 import { carrito } from './entidades/carrito';
 import { Observable,Subject} from 'rxjs';
+import { environment } from '../environments/environment';
 
 @Injectable()
 export class DataService {
 
 //Declaración de las variables
-  private PathImagenes = '../assets/imagenesBase/';
+  private PathImagenes = './assets/imagenesBase/';
   private listausuarios: usuarios[] =[];
-  private listaproductos: producto[] =[];
+  listaproductos: producto[] =[];
   private carritoCompra: carrito;
   V_ContadorDataService: number;
   V_Logueado:boolean;
@@ -23,15 +24,18 @@ export class DataService {
     this.carritoCompra = new carrito();
     this.V_ContadorDataService = 0;
     this.V_Logueado = false;
-    console.log("Constructor carrito-Dataservice")
     this.getUsuarios();
     this.getProductos();
   }
 
 
-//Metódos
+//Metódos y funciones
 
-//Método que obtiene todos los usuarios en la base de datos Firebase, retorna listausuarios
+  /**
+   * //Método que obtiene todos los usuarios en la base de datos Firebase
+   * @returns retorna listausuarios
+   * @memberof DataService
+   */
   getUsuarios()
   {
     //Llamada al servicio para obtener todos los usuarios
@@ -44,7 +48,6 @@ export class DataService {
           {
             if (data[key] !=null)
             {
-             
               let V_usuario =new usuarios();
               V_usuario.usuario = data[key].usuario;
               V_usuario.password = data[key].password;
@@ -57,22 +60,31 @@ export class DataService {
     return this.listausuarios;
   }
 
-//Método que valida si el usuario es un usuario válido y retorna un boolean
-getUsuarioValido(pUser:string, pPassword:string)
-{
-  for(let key in this.listausuarios)
+  /**
+   *Método que valida si el usuario es un usuario válido
+  * @param {string} pUser
+  * @param {string} pPassword
+  * @returns retorna un boolean
+  * @memberof DataService
+  */
+  getUsuarioValido(pUser:string, pPassword:string)
   {
-       if (pUser==this.listausuarios[key].usuario && pPassword==this.listausuarios[key].password)
+    for(let key in this.listausuarios)
     {
-        this.V_Logueado = true;
-        return this.V_Logueado;
+        if (pUser==this.listausuarios[key].usuario && pPassword==this.listausuarios[key].password)
+      {
+          this.V_Logueado = true;
+          return this.V_Logueado;
+      }
     }
+    return false;
   }
-  return false;
-}
 
-
-  //Método que obtiene todos los productos en la base de datos Firebase, retorna listausuarios
+  /**
+   *Método que obtiene todos los productos en la base de datos Firebase
+   * @returns lista de productos
+   * @memberof DataService
+   */
   getProductos()
   {
     //Llamada al servicio para obtener todos los usuarios
@@ -80,7 +92,6 @@ getUsuarioValido(pUser:string, pPassword:string)
     .subscribe(
       (data: Response) =>
         {
-          console.log(data);
           let aux : any[]=[];
           for(let key in data)
           {
@@ -93,7 +104,12 @@ getUsuarioValido(pUser:string, pPassword:string)
               V_producto.Stock = data[key].Stock;
               V_producto.cantidad = 0;
               V_producto.subtotal = 0;
-              V_producto.imagen = this.PathImagenes + data[key].imagen;
+              V_producto.imagen = data[key].imagen;
+              if (environment.production) 
+              {
+                V_producto.imagen = V_producto.imagen.replace("..",".")  //Se modifica la ruta relativa en modo producción.
+              }
+              
               aux.push(V_producto);
             }
           }
@@ -104,13 +120,13 @@ getUsuarioValido(pUser:string, pPassword:string)
 
   }
 
-  getProductosByNombre(pNombre:string)
-  {
-    this.getProductos();
-    
-  }
-
-//Método para agregar un producto al carrito de compra. 
+ 
+  /**
+   *Método para agregar un producto al carrito de compra.
+   * @param {producto} Item
+   * @returns cantidad de productos en el carrito de compra
+   * @memberof DataService
+   */
   Agregar(Item:producto)
   {
     var resultado = this.carritoCompra.Productos.findIndex(x=> x.Nombre == Item.Nombre)
@@ -130,15 +146,21 @@ getUsuarioValido(pUser:string, pPassword:string)
     return this.ConsultarContador();
   }
 
+
+  /**
+   * Método que modifica un producto en el carrito de compra  y actualiza en la base de datos Firebase
+   * @param {producto} Item
+   * @returns resultado de la ejecución (True/False)
+   * @memberof DataService
+   */
   Modificar(Item:producto)
   {
-    Item.imagen = Item.imagen.replace(this.PathImagenes,'');
+    //Item.imagen = Item.imagen.replace(this.PathImagenes,'');
 
      this.httpService.ActualizarProductos(Item)
      .subscribe(
        (data: Response) =>
          {
-            console.log(data);
             return true;
          }
      ) 
@@ -146,11 +168,23 @@ getUsuarioValido(pUser:string, pPassword:string)
   }
 
 
+  /**
+   * Método que consulta el carrito de compras
+   * @returns Entidad Carrito
+   * @memberof DataService
+   */
   getCarrito()
   {
     return this.carritoCompra;
   }
 
+
+  /**
+   * Método que realiza el pago de los productos del carrito de compra
+   * Modifica los datos y limpa el carrito de compra
+   * @param {carrito} V_Carrito
+   * @memberof DataService
+   */
   Pagar(V_Carrito: carrito)
   {
     this.carritoCompra = V_Carrito;
@@ -168,6 +202,12 @@ getUsuarioValido(pUser:string, pPassword:string)
 
   //Funciones generales
 
+  /**
+   * Método que consulta el fondo según la condición de logueo del usuario en sesión.
+   *
+   * @returns URL del fondo de la página.
+   * @memberof DataService
+   */
   CambiarFondo()
   {
       if (this.V_Logueado) 
@@ -179,9 +219,13 @@ getUsuarioValido(pUser:string, pPassword:string)
       }
   }
  
+  /**
+   *Método que consulta la cantidad de productos
+   * @returns cantidad de productos nuevos
+   * @memberof DataService
+   */
   ConsultarContador()
   {
-    console.log("Contador DataService: " + this.V_ContadorDataService);
     return this.V_ContadorDataService;
   }
 

@@ -1,5 +1,6 @@
 import { Component, Injectable, Input, Output,EventEmitter } from '@angular/core';
 import { DataService } from '../data.service';
+import { environment } from '../../environments/environment';
 
 @Component({
   selector: 'barra-superior',
@@ -8,5 +9,14 @@ import { DataService } from '../data.service';
 })
 
 export class BarraSuperiorComponent {
-  @Input() item: number;
+  @Input() p_ContadorProductos: number; //Cantidad de productos agregados en el carrito.
+
+  private V_RutaIconos:string = "../../assets/iconos/"; //En modo producción se cambia la ruta relativa
+
+  constructor()
+  {
+    if (environment.production) {
+      this.V_RutaIconos = "./assets/iconos/"
+    }
+  }
 }

@@ -1,0 +1,110 @@
+"1": 
+{
+    "IDProducto": "1",
+    "Nombre": "Aguacate",
+    "Precio": 5,
+    "Stock": 46,
+    "cantidad": 0,
+    "imagen": "../assets/imagenesBase/aguacate.jpg",
+    "subtotal": 0
+},
+"2": {
+    "IDProducto": "2",
+    "Nombre": "Ajo",
+    "Precio": 2,
+    "Stock": 76,
+    "cantidad": 0,
+    "imagen": "../assets/imagenesBase/ajo.jpg",
+    "subtotal": 0
+},
+"3": {
+    "IDProducto": "3",
+    "Nombre": "Almendras",
+    "Precio": 8,
+    "Stock": 29,
+    "cantidad": 0,
+    "imagen": "../assets/imagenesBase/almendras.jpg",
+    "subtotal": 0
+},
+"4": {
+    "IDProducto": "4",
+    "Nombre": "Arándanos",
+    "Precio": 6,
+    "Stock": 39,
+    "cantidad": 0,
+    "imagen": "../assets/imagenesBase/arandanos.jpg",
+    "subtotal": 0
+},
+"5": {
+    "IDProducto": "5",
+    "Nombre": "Brocoli",
+    "Precio": 3,
+    "Stock": 45,
+    "cantidad": 0,
+    "imagen": "../assets/imagenesBase/brocoli.png",
+    "subtotal": 0
+},
+"6": {
+    "IDProducto": "6",
+    "Nombre": "Calabaza",
+    "Precio": 6,
+    "Stock": 40,
+    "cantidad": 0,
+    "imagen": "../assets/imagenesBase/calabaza.jpg",
+    "subtotal": 0
+},
+"7": {
+    "IDProducto": "7",
+    "Nombre": "Canela",
+    "Precio": 2,
+    "Stock": 20,
+    "cantidad": 0,
+    "imagen": "../assets/imagenesBase/canela.jpg",
+    "subtotal": 0
+},
+"8": {
+    "IDProducto": "8",
+    "Nombre": "Cebolla",
+    "Precio": 4,
+    "Stock": 28,
+    "cantidad": 0,
+    "imagen": "../assets/imagenesBase/cebolla.jpg",
+    "subtotal": 0
+},
+
+"9": {
+    "IDProducto": "9",
+    "Nombre": "Fresa",
+    "Precio": 4,
+    "Stock": 60,
+    "cantidad": 0,
+    "imagen": "../assets/imagenesBase/fresa.jpg",
+    "subtotal": 0
+},
+"10": {
+    "IDProducto": "10",
+    "Nombre": "Naranja",
+    "Precio": 2,
+    "Stock": 20,
+    "cantidad": 0,
+    "imagen": "../assets/imagenesBase/naranja.jpg",
+    "subtotal": 0
+},
+"11": {
+    "IDProducto": "11",
+    "Nombre": "Manzana",
+    "Precio": 4,
+    "Stock": 28,
+    "cantidad": 0,
+    "imagen": "../assets/imagenesBase/manzana.jpg",
+    "subtotal": 0
+},
+"12": {
+    "IDProducto": "12",
+    "Nombre": "Pasta",
+    "Precio": 4,
+    "Stock": 28,
+    "cantidad": 0,
+    "imagen": "../assets/imagenesBase/pasta.jpg",
+    "subtotal": 0
+}

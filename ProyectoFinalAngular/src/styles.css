@@ -1,3 +1,4 @@
+/*Estilos generales*/
 html{
   height: 100%;
   background-repeat: no-repeat;
@@ -5,7 +6,7 @@ html{
   background-attachment: fixed;
   background-position: center center;
   margin:0px;
-  background-image: url('/assets/imagenesBase/login-fondo.jpg');
+  background-image: url('./assets/imagenesBase/login-fondo.jpg');
  }
 
  body{
@@ -15,7 +16,7 @@ html{
   background-attachment: fixed;
   background-position: center center;
   margin:0px;
-  background-image: url('/assets/imagenesBase/login-fondo.jpg');
+  background-image: url('./assets/imagenesBase/login-fondo.jpg');
  
  }
 
@@ -23,7 +24,8 @@ head{
   background-color: transparent;
 }
 
-.back-catalogo
+/*Estilos personalizados*/
+.fondo-catalogo
 {
   margin-top: 15px;
   padding: 10px;
@@ -53,63 +55,67 @@ head{
   margin-left: 10px;
 }
 
+/*Media querys cuando la pantalla cambia de resolución*/
 @media (max-width:420px)
 {
-
-  /* estilos para los contenedores */
-.contenedorPantalla {
-  width: 80%;
-  margin-left: 10%;
-  margin-right: 10%;
-  font-family: 'Courier New', Courier, monospace;
-  color: white;
-}
-
-    .container 
-    {
-        display: flex; 
-        flex-direction:column !important; 
-    }
-
-    h1
-    {
-        font-size: medium;
-        font-weight: bold;
-    }
-
-    .titulo
-    {
+  /*Estilos generales*/
+  h1
+  {
       font-size: medium;
       font-weight: bold;
-      text-align: left;
-    }
+  }
 
-    .subtitulo
-    {
-      font-size: small;
-      text-align: left;
-      margin-left: 10px;
-      color: gray;
-    }
+  /*Estilos para los contenedores */
+  .contenedorPantalla 
+  {
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+    font-family: 'Courier New', Courier, monospace;
+    color: white;
+  }
 
-    .subtitulo2
-    {
-      font-size: small;
-      text-align: left;
-      margin-left: 10px;
-      color: gray;
-    }
+  .container 
+  {
+      display: flex; 
+      flex-direction:column !important; 
+  }
+
+  /*Estilos personalizados*/
+  .titulo
+  {
+    font-size: medium;
+    font-weight: bold;
+    text-align: left;
+  }
+
+  .subtitulo
+  {
+    font-size: small;
+    text-align: left;
+    margin-left: 10px;
+    color: gray;
+  }
+
+  .subtitulo2
+  {
+    font-size: small;
+    text-align: left;
+    margin-left: 10px;
+    color: gray;
+  }
 } 
 
 @media (max-width:812px) 
 {
   /* estilos para los contenedores */
-.contenedorPantalla {
-  width: 90%;
-  margin-left: 5%;
-  margin-right: 5%;
-  font-family: 'Courier New', Courier, monospace;
-}
+  .contenedorPantalla 
+  {
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+    font-family: 'Courier New', Courier, monospace;
+  }
 
 }
 
@@ -117,17 +123,18 @@ head{
 @media (min-width:813px) 
 {
 
-    /* estilos para los contenedores */
-.contenedorPantalla {
-  width: 90%;
-  margin-left: 5%;
-  margin-right: 5%;
-  font-family: 'Courier New', Courier, monospace;
-}
+  /* estilos para los contenedores */
+  .contenedorPantalla 
+  {
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+    font-family: 'Courier New', Courier, monospace;
+  }
 
-    .container 
-    {
-        display: flex; 
-        flex-direction:row !important;
-    }
+  .container 
+  {
+      display: flex; 
+      flex-direction:row !important;
+  }
 } 

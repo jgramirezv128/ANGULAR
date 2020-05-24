@@ -13,17 +13,17 @@
         <div class="menuderecha">
           <nav>
             <a class="navbar-brand" routerLink="/catalogo">
-              <img src="../../assets/iconos/grid.svg" width="30" height="30" alt="">
+              <img src="{{V_RutaIconos}}grid.svg" width="30" height="30" alt="">
             </a>
             <a class="navbar-brand" routerLink="/app-carrito">
-              <img src="../../assets/iconos/shopping-cart.svg" width="30" height="30" alt="">            
-                <span id="v_cont" *ngIf="item>0" class='badge badge-warning' id='lblCartCount'> {{item}} </span>
+              <img src="{{V_RutaIconos}}shopping-cart.svg" width="30" height="30" alt="">            
+                <span id="v_cont" *ngIf="p_ContadorProductos>0" class='badge badge-warning' id='lblCartCount'> {{p_ContadorProductos}} </span>
             </a>
             <a class="navbar-brand">
-              <img src="../../assets/iconos/download.svg" width="30" height="30" alt="">
+              <img src="{{V_RutaIconos}}download.svg" width="30" height="30" alt="">
             </a>
             <a class="navbar-brand" routerLink="/">
-              <img src="../../assets/iconos/logout.svg" width="30" height="30" alt="">
+              <img src="{{V_RutaIconos}}logout.svg" width="30" height="30" alt="">
             </a>
           </nav>
         </div>

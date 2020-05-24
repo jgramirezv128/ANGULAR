@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../data.service';
 import { carrito } from 'app/entidades/carrito';
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-carrito',
@@ -11,7 +12,7 @@ export class CarritoComponent{
 
   private carritoCompra: carrito = new carrito();
   
-  constructor(private servicio:DataService) 
+  constructor(private servicio:DataService, private prouter: Router) 
   { 
      this.carritoCompra=  servicio.getCarrito();
   }
@@ -19,6 +20,7 @@ export class CarritoComponent{
   onPagar()
   {
      this.servicio.Pagar(this.carritoCompra);
+     this.prouter.navigate(['/catalogo']);
   }
 
 }

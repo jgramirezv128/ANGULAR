@@ -1,3 +1,4 @@
+/*Estilos personalizados para la barra*/
 .barrasuperior
 {
   height: 60px;
@@ -7,6 +8,7 @@
   background-color: white;
 }
 
+/*Estilos para el Menú de opciones*/
 .menuizquierda
 {
   background-color: white;
@@ -27,6 +29,15 @@
   width: auto;
 }
 
+img:hover
+{
+  filter: grayscale(100%);
+  -webkit-filter: grayscale(1);
+  filter: gray; 
+  
+}
+
+/*Estilos personalizados para el carrito*/
 .badge {
   padding-left: 9px;
   padding-right: 9px;
@@ -39,6 +50,7 @@
 .badge-warning[href] {
   background-color: #ff0000;
 }
+
 #lblCartCount {
     font-size: 12px;
     background: #ff0000;

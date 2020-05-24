@@ -1,6 +1,6 @@
 import { producto } from "./producto";
 
-//Entidad para los usuarios
+//Entidad para el carrito de compras
 export class carrito
 {
   Productos: producto[];

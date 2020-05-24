@@ -9,23 +9,27 @@ import { producto } from '../entidades/producto';
 })
 export class CatalogoComponent{
   //Declaración de variables
-  V_listaproductos: producto[];
-  V_listaproductosFiltro: producto[];
-  V_listaproductosCarrito: producto[] = [];
-  V_filtro: string = "";
-  V_Contador:number;
+  V_listaproductos: producto[] =[]; // lista original de productos
+  V_listaproductosFiltro: producto[]; // lista filtrada de productos
+  V_filtro: string;//variable utiliza como parámetro para filtrar
+  V_Contador:number; // contador de productos agregados
 
-  //Construcctor
+  //Constructor de la clase catálogo
   constructor(private dataService: DataService) 
   { 
-    this.V_listaproductos=  this.dataService.getProductos();
+    this.V_listaproductos=  this.dataService.listaproductos;
     this.V_listaproductosFiltro = this.V_listaproductos;
-  }
+    this.V_filtro="";
+   }
 
-  //Evento para filtrar los datos
-  onKey(event: any): void
+  /**
+   * Evento para filtrar los datos cuando presiona una tecla
+   * @param {*} p_Evento //Evento recibido por parámetro
+   * @memberof CatalogoComponent
+   */
+  onDigitar(p_Evento: any): void
   {
-    this.V_filtro = event.target.value;
+    this.V_filtro = p_Evento.target.value;
     this.V_listaproductosFiltro = [];
 
     if (this.V_filtro.length > 0) {
@@ -41,10 +45,19 @@ export class CatalogoComponent{
     }
   }
 
+/**
+ * Método para agregar items al carrito de compra
+ *
+ * @param {producto} Item de tipo producto
+ * @memberof CatalogoComponent
+ */
 AgregarItemCarrito(Item:producto)
 {
-  this.V_Contador = this.dataService.Agregar(Item);
-  console.log("Total agregar:" + this.V_Contador);
+  if (Item.cantidad>0) 
+  {
+    this.V_Contador = this.dataService.Agregar(Item);
+  }
+  
 }
 
 }

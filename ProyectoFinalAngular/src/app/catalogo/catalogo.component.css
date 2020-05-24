@@ -1,15 +1,15 @@
 
 body
 {
-  background-image: url('/assets/imagenesBase/main-fondo.jpg');
+  background-image: url('./assets/imagenesBase/main-fondo.jpg');
 }
-/* Add a black background color to the top navigation bar */
+/* Barra de navegación superior */
 .topnav {
   overflow: hidden;
   background-color: white;
 }
 
-/* Style the links inside the navigation bar */
+/* Estilos para los enlaces en la barra de navegación */
 .topnav a {
   float: left;
   display: block;
@@ -20,19 +20,19 @@ body
   font-size: 17px;
 }
 
-/* Change the color of links on hover */
+/* Cambia el estilo sobre para los enlaces en la barra de navegación */
 .topnav a:hover {
-  background-color: #ddd;
+  background-color: gray;
   color: black;
 }
 
-/* Style the "active" element to highlight the current page */
+/* Cambia el estilo sobre para los enlaces en la barra de navegación*/
 .topnav a.active {
   background-color: #2196F3;
   color: white;
 }
 
-/* Style the search box inside the navigation bar */
+/* Estilo de cuadro de búsqueda en la barra de navegación */
 .topnav input[type=text] {
   float: right;
   padding: 6px;
@@ -41,7 +41,7 @@ body
   font-size: 17px;
 }
 
-/* When the screen is less than 600px wide, stack the links and the search field vertically instead of horizontally */
+/* Media querys cuando la pantalla cambia de resolución */
 @media screen and (max-width: 600px) {
   .topnav a, .topnav input[type=text] {
     float: none;

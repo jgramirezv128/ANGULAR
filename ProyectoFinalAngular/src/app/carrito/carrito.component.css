@@ -1,8 +1,10 @@
+/*Estilos generales*/
 body
 {
   background-color: transparent;
 }
 
+/*Estilos personalizados*/
 .tarjeta
 {
     border: 2px;
@@ -12,6 +14,7 @@ body
     width: 16rem;
 }
 
+/* Media querys cuando la pantalla cambia de resolución */
 @media (max-width:420px)
 {
     .container 

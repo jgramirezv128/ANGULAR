@@ -4,24 +4,25 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   </head>
   <body>
-    <barra-superior [item]="V_Contador"></barra-superior> 
-      <div class="back-catalogo">
+    <barra-superior [p_ContadorProductos]="V_Contador"></barra-superior> 
+      <div class="fondo-catalogo">
           <h1 class="titulo">Catálogo de productos</h1>
           <div class="topnav">
             <p class="subtitulo2" style="margin-right: 17%; margin-bottom: 0px;">¿Qué estás buscando?</p>
-            <input type="text" placeholder="Buscar producto" ng-model="searchText" (keyup)="onKey($event)">
+            <input type="text" placeholder="Buscar producto" (keyup)="onDigitar($event)">
           </div>
 
           <div class="container" style="height: 460px; margin-top: 5%;">
-            <div class="row row-cols-1 row-cols-md-4" style="overflow:auto;">
-              <div class="col mb-4" *ngFor="let pProductos of V_listaproductosFiltro">
+            <div [ngClass]="{'row row-cols-1': V_listaproductosFiltro.length > 0,'row-cols-md-4': V_listaproductosFiltro.length >= 3 ,
+               'row-cols-md-2': V_listaproductosFiltro.length < 3}" style="overflow:auto;">
+              <div class="col mb-1" *ngFor="let pProductos of V_listaproductosFiltro">
                 <div class="card">
                   <img src="{{pProductos.imagen}}" class="card-img-top" alt="{{pProductos.Nombre}}" style="max-height: 420px;">
                   <div class="card-body">
                     <h5 class="card-title text-dark">{{pProductos.Nombre}}</h5>
                     <p class="card-text text-dark">
-                        Precio:${{pProductos.Precio}} <br>
-                        Unidades disponibles: ${{pProductos.Stock}} <br>
+                       <b> Precio: </b>${{pProductos.Precio}} <br>
+                       <b> Unidades disponibles: </b>{{pProductos.Stock}} <br>
                     </p>       
                       <a routerLink="/detalle-producto/{{pProductos.Nombre}}" class="btn btn-primary btn-sm">Ver más</a>
                       <a class="btn btn-warning btn-sm text-light" (click)="AgregarItemCarrito(pProductos)" >Añadir</a>
